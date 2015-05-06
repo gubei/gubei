@@ -3,17 +3,50 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hello | 顾北的笔记</title>
+  <title>ubuntu-server-set-timezone | 顾北的笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="最近在使用ubuntu的服务器，我发现如果不是设置时区打印出log的时候是按照UTC时区来的。我就不能直观知道请求时间，所以就需要设置一下时区。
+先查看当前的时间：1date
+显示当前的时间，例如：
+
+Wed May  6 13:24:59 CST 2015
+
+再看出当前的时区：1more /etc/timezone
+显示时区为：
+
+Asia/Shanghai
+
+接下来调整到你需要的时区，使用命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello">
-<meta property="og:url" content="http://home.omniknight.com/2015/04/27/hello/index.html">
+<meta property="og:title" content="ubuntu-server-set-timezone">
+<meta property="og:url" content="http://home.omniknight.com/2015/05/06/ubuntu-server-set-timezone/index.html">
 <meta property="og:site_name" content="顾北的笔记">
-<meta property="og:description">
+<meta property="og:description" content="最近在使用ubuntu的服务器，我发现如果不是设置时区打印出log的时候是按照UTC时区来的。我就不能直观知道请求时间，所以就需要设置一下时区。
+先查看当前的时间：1date
+显示当前的时间，例如：
+
+Wed May  6 13:24:59 CST 2015
+
+再看出当前的时区：1more /etc/timezone
+显示时区为：
+
+Asia/Shanghai
+
+接下来调整到你需要的时区，使用命令">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello">
-<meta name="twitter:description">
+<meta name="twitter:title" content="ubuntu-server-set-timezone">
+<meta name="twitter:description" content="最近在使用ubuntu的服务器，我发现如果不是设置时区打印出log的时候是按照UTC时区来的。我就不能直观知道请求时间，所以就需要设置一下时区。
+先查看当前的时间：1date
+显示当前的时间，例如：
+
+Wed May  6 13:24:59 CST 2015
+
+再看出当前的时区：1more /etc/timezone
+显示时区为：
+
+Asia/Shanghai
+
+接下来调整到你需要的时区，使用命令">
   
     <link rel="alternative" href="/atom.xml" title="顾北的笔记" type="application/atom+xml">
   
@@ -160,11 +193,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ubuntu-server-set-timezone" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/27/hello/" class="article-date">
-  	<time datetime="2015-04-27T11:47:44.000Z" itemprop="datePublished">2015-04-27</time>
+      <a href="/2015/05/06/ubuntu-server-set-timezone/" class="article-date">
+  	<time datetime="2015-05-06T05:19:40.000Z" itemprop="datePublished">2015-05-06</time>
 </a>
     </div>
   
@@ -177,7 +210,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hello
+      ubuntu-server-set-timezone
     </h1>
   
 
@@ -185,6 +218,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -193,7 +230,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>最近在使用ubuntu的服务器，我发现如果不是设置时区打印出log的时候是按照UTC时区来的。我就不能直观知道请求时间，所以就需要设置一下时区。</p>
+<p>先查看当前的时间：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure></p>
+<p>显示当前的时间，例如：</p>
+<blockquote>
+<p>Wed May  6 13:24:59 CST 2015</p>
+</blockquote>
+<p>再看出当前的时区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more /etc/timezone</span><br></pre></td></tr></table></figure></p>
+<p>显示时区为：</p>
+<blockquote>
+<p>Asia/Shanghai</p>
+</blockquote>
+<p>接下来调整到你需要的时区，使用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure></p>
+<p>选择时区，完成操作。</p>
+<p>同样如果你有cron的任务的话，需要重启cron，不然它还是会使用老的时区时间<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/cron stop</span><br><span class="line">/etc/init.d/cron start</span><br></pre></td></tr></table></figure></p>
+
       
     </div>
     
@@ -202,15 +253,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/28/c-include-theroy/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          C++编译和链接随笔
-        
-      </div>
-    </a>
   
+    <a href="/2015/04/28/c-include-theroy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C++编译和链接随笔</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 

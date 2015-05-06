@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://home.omniknight.com/"/>
-  <updated>2015-04-29T06:12:41.000Z</updated>
+  <updated>2015-05-06T05:30:37.000Z</updated>
   <id>http://home.omniknight.com/</id>
   
   <author>
@@ -15,11 +15,43 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[ubuntu-server-set-timezone]]></title>
+    <link href="http://home.omniknight.com/2015/05/06/ubuntu-server-set-timezone/"/>
+    <id>http://home.omniknight.com/2015/05/06/ubuntu-server-set-timezone/</id>
+    <published>2015-05-06T05:19:40.000Z</published>
+    <updated>2015-05-06T05:30:37.000Z</updated>
+    <content type="html"><![CDATA[<p>最近在使用ubuntu的服务器，我发现如果不是设置时区打印出log的时候是按照UTC时区来的。我就不能直观知道请求时间，所以就需要设置一下时区。</p>
+<p>先查看当前的时间：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure></p>
+<p>显示当前的时间，例如：</p>
+<blockquote>
+<p>Wed May  6 13:24:59 CST 2015</p>
+</blockquote>
+<p>再看出当前的时区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more /etc/timezone</span><br></pre></td></tr></table></figure></p>
+<p>显示时区为：</p>
+<blockquote>
+<p>Asia/Shanghai</p>
+</blockquote>
+<p>接下来调整到你需要的时区，使用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure></p>
+<p>选择时区，完成操作。</p>
+<p>同样如果你有cron的任务的话，需要重启cron，不然它还是会使用老的时区时间<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/cron stop</span><br><span class="line">/etc/init.d/cron start</span><br></pre></td></tr></table></figure></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>最近在使用ubuntu的服务器，我发现如果不是设置时区打印出log的时候是按照UTC时区来的。我就不能直观知道请求时间，所以就需要设置一下时区。</p>
+<p>先查看当前的时间：<br><figure class="highlight bash"><table><tr><t]]>
+    </summary>
+    
+      <category term="linux" scheme="http://home.omniknight.com/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="http://home.omniknight.com/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[C++编译和链接随笔]]></title>
     <link href="http://home.omniknight.com/2015/04/28/c-include-theroy/"/>
     <id>http://home.omniknight.com/2015/04/28/c-include-theroy/</id>
     <published>2015-04-28T04:01:43.000Z</published>
-    <updated>2015-04-29T06:12:41.000Z</updated>
+    <updated>2015-04-29T15:03:01.000Z</updated>
     <content type="html"><![CDATA[<h1 id="C++_complie_and_link">C++ complie and link</h1><p>最近在搞C++编程遇</p>
 ]]></content>
     <summary type="html">
@@ -28,6 +60,8 @@
     </summary>
     
       <category term="C++" scheme="http://home.omniknight.com/tags/C/"/>
+    
+      <category term="computer" scheme="http://home.omniknight.com/categories/computer/"/>
     
   </entry>
   

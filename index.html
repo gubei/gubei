@@ -102,7 +102,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: NaNpx;">C++</a>
+						<a href="/tags/C/" style="font-size: NaNpx;">C++</a><a href="/tags/linux/" style="font-size: NaNpx;">linux</a><a href="/tags/ubuntu/" style="font-size: NaNpx;">ubuntu</a>
 					</div>
 				</section>
 				
@@ -162,6 +162,72 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-ubuntu-server-set-timezone" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/06/ubuntu-server-set-timezone/" class="article-date">
+  	<time datetime="2015-05-06T05:19:40.000Z" itemprop="datePublished">2015-05-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/06/ubuntu-server-set-timezone/">ubuntu-server-set-timezone</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>最近在使用ubuntu的服务器，我发现如果不是设置时区打印出log的时候是按照UTC时区来的。我就不能直观知道请求时间，所以就需要设置一下时区。</p>
+<p>先查看当前的时间：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure></p>
+<p>显示当前的时间，例如：</p>
+<blockquote>
+<p>Wed May  6 13:24:59 CST 2015</p>
+</blockquote>
+<p>再看出当前的时区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more /etc/timezone</span><br></pre></td></tr></table></figure></p>
+<p>显示时区为：</p>
+<blockquote>
+<p>Asia/Shanghai</p>
+</blockquote>
+<p>接下来调整到你需要的时区，使用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure></p>
+<p>选择时区，完成操作。</p>
+<p>同样如果你有cron的任务的话，需要重启cron，不然它还是会使用老的时区时间<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/cron stop</span><br><span class="line">/etc/init.d/cron start</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-c-include-theroy" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -200,6 +266,10 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/computer/">computer</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
