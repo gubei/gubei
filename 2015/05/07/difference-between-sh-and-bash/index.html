@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hello | 顾北的笔记</title>
+  <title>difference-between-sh-and-bash | 顾北的笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="今天遇到了一个问题，再使用let的时候/bin/sh 提示没有关键字
+以前一直以为/bin/sh和/bin/bash是一样。遇到了这个问题，我查了一下：
+
+bash and sh are two different shells. Basically bash is sh, with more features and better syntax. Most commands work the s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello">
-<meta property="og:url" content="http://home.omniknight.com/2015/04/27/hello/index.html">
+<meta property="og:title" content="difference-between-sh-and-bash">
+<meta property="og:url" content="http://home.omniknight.com/2015/05/07/difference-between-sh-and-bash/index.html">
 <meta property="og:site_name" content="顾北的笔记">
-<meta property="og:description">
+<meta property="og:description" content="今天遇到了一个问题，再使用let的时候/bin/sh 提示没有关键字
+以前一直以为/bin/sh和/bin/bash是一样。遇到了这个问题，我查了一下：
+
+bash and sh are two different shells. Basically bash is sh, with more features and better syntax. Most commands work the s">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello">
-<meta name="twitter:description">
+<meta name="twitter:title" content="difference-between-sh-and-bash">
+<meta name="twitter:description" content="今天遇到了一个问题，再使用let的时候/bin/sh 提示没有关键字
+以前一直以为/bin/sh和/bin/bash是一样。遇到了这个问题，我查了一下：
+
+bash and sh are two different shells. Basically bash is sh, with more features and better syntax. Most commands work the s">
   
     <link rel="alternative" href="/atom.xml" title="顾北的笔记" type="application/atom+xml">
   
@@ -160,11 +169,11 @@
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-difference-between-sh-and-bash" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/27/hello/" class="article-date">
-  	<time datetime="2015-04-27T11:47:44.000Z" itemprop="datePublished">2015-04-27</time>
+      <a href="/2015/05/07/difference-between-sh-and-bash/" class="article-date">
+  	<time datetime="2015-05-07T07:24:36.000Z" itemprop="datePublished">2015-05-07</time>
 </a>
     </div>
   
@@ -177,7 +186,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hello
+      difference-between-sh-and-bash
     </h1>
   
 
@@ -185,6 +194,10 @@
       
       <div class="article-info article-info-post">
         
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sh/">sh</a></li></ul>
+	</div>
+
         
 
         <div class="clearfix"></div>
@@ -193,7 +206,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>今天遇到了一个问题，再使用<code>let</code>的时候<br><code>/bin/sh</code> 提示没有关键字</p>
+<p>以前一直以为<code>/bin/sh</code>和<code>/bin/bash</code>是一样。<br>遇到了这个问题，我查了一下：</p>
+<blockquote>
+<p>bash and sh are two different shells. Basically bash is sh, with more features and better syntax. Most commands work the same, but they are different.<br> I would use bash, as that is pretty much the standard (or at least most common, from my experience). In fact, problems arise when a bash script will use #!/bin/sh because the script-maker assumes the link is to bash</p>
+</blockquote>
+<p>在使用<code>/bin/sh</code> 或者<code>/bin/bash</code>的时候要注意兼容性 </p>
+
       
     </div>
     
@@ -202,15 +221,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/28/c-include-theroy/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          C++编译和链接随笔
-        
-      </div>
-    </a>
   
+    <a href="/2015/05/06/ubuntu-server-set-timezone/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ubuntu-server-set-timezone</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 

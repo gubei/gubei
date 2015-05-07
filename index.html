@@ -102,7 +102,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: NaNpx;">C++</a><a href="/tags/linux/" style="font-size: NaNpx;">linux</a><a href="/tags/ubuntu/" style="font-size: NaNpx;">ubuntu</a>
+						<a href="/tags/C/" style="font-size: NaNpx;">C++</a><a href="/tags/bash/" style="font-size: NaNpx;">bash</a><a href="/tags/linux/" style="font-size: NaNpx;">linux</a><a href="/tags/sh/" style="font-size: NaNpx;">sh</a><a href="/tags/ubuntu/" style="font-size: NaNpx;">ubuntu</a>
 					</div>
 				</section>
 				
@@ -161,6 +161,64 @@
 	</div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-difference-between-sh-and-bash" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/07/difference-between-sh-and-bash/" class="article-date">
+  	<time datetime="2015-05-07T07:24:36.000Z" itemprop="datePublished">2015-05-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/07/difference-between-sh-and-bash/">difference-between-sh-and-bash</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天遇到了一个问题，再使用<code>let</code>的时候<br><code>/bin/sh</code> 提示没有关键字</p>
+<p>以前一直以为<code>/bin/sh</code>和<code>/bin/bash</code>是一样。<br>遇到了这个问题，我查了一下：</p>
+<blockquote>
+<p>bash and sh are two different shells. Basically bash is sh, with more features and better syntax. Most commands work the same, but they are different.<br> I would use bash, as that is pretty much the standard (or at least most common, from my experience). In fact, problems arise when a bash script will use #!/bin/sh because the script-maker assumes the link is to bash</p>
+</blockquote>
+<p>在使用<code>/bin/sh</code> 或者<code>/bin/bash</code>的时候要注意兼容性 </p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sh/">sh</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
   
     <article id="post-ubuntu-server-set-timezone" class="article article-type-post" itemscope itemprop="blogPost">
   
