@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://home.omniknight.com/"/>
-  <updated>2015-05-07T07:40:04.000Z</updated>
+  <updated>2015-05-21T09:00:23.000Z</updated>
   <id>http://home.omniknight.com/</id>
   
   <author>
@@ -13,6 +13,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[linux-shortcut]]></title>
+    <link href="http://home.omniknight.com/2015/05/21/linux-shortcut/"/>
+    <id>http://home.omniknight.com/2015/05/21/linux-shortcut/</id>
+    <published>2015-05-21T08:22:43.000Z</published>
+    <updated>2015-05-21T09:00:23.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="命令行快捷键">命令行快捷键</h3><ol>
+<li>CTRL + U – 剪切光标前的内容</li>
+<li>CTRL + K – 剪切光标至行末的内容</li>
+<li>CTRL + Y – 粘贴</li>
+<li>CTRL + E – 移动光标到行末</li>
+<li>CTRL + A – 移动光标到行首</li>
+<li>ALT + F – 跳向下一个空格</li>
+<li>ALT + B – 跳回上一个空格</li>
+<li>ALT + Backspace – 删除前一个单词</li>
+<li>CTRL + W – 剪切光标前一个单词</li>
+<li>Shift + Insert – 向终端内粘贴文本</li>
+</ol>
+<h3 id="sudo_!!">sudo !!</h3><p>sudo repeat last command</p>
+<h3 id="ranger_文件浏览器">ranger 文件浏览器</h3><h3 id="htop_进程查看">htop 进程查看</h3>]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="命令行快捷键">命令行快捷键</h3><ol>
+<li>CTRL + U – 剪切光标前的内容</li>
+<li>CTRL + K – 剪切光标至行末的内容</li>
+<li>CTRL + Y – 粘贴</li>
+<li>CTRL + E – 移动光标到行末</l]]>
+    </summary>
+    
+      <category term="linux" scheme="http://home.omniknight.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[javascript-design-partern]]></title>
+    <link href="http://home.omniknight.com/2015/05/10/javascript-design-partern/"/>
+    <id>http://home.omniknight.com/2015/05/10/javascript-design-partern/</id>
+    <published>2015-05-10T02:12:37.000Z</published>
+    <updated>2015-05-10T02:12:37.000Z</updated>
+    <content type="html"></content>
+    <summary type="html">
+    
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[difference-between-sh-and-bash]]></title>
