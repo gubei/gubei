@@ -3,32 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>C-compile-link-theory | 顾北的笔记</title>
+  <title>ranger | 顾北的笔记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近在搞C++编程遇
-
-参考内容：
-
-http://www.lurklurk.org/linkers/linkers.html
-http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html">
+  <meta name="description" content="刚从windows系统转到ubuntu的时候,总觉得ubuntu文件系统的文件系统很难用。在terminal和文件系统中切换感觉成本相当的高，而且ubuntu的文件系统非常难用，换了几个文件系统，都不理想。直到我发现ranger在terminal中的文件系统，相当好用，相当强大。下面我来介绍一下ranger。  
+先来看看效果：
+1. 在ubuntu下安装:1sudo apt-get instal">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C-compile-link-theory">
-<meta property="og:url" content="http://home.omniknight.com/2015/04/28/c-compile-link-theroy/index.html">
+<meta property="og:title" content="ranger">
+<meta property="og:url" content="http://home.omniknight.com/2015/05/23/ranger/index.html">
 <meta property="og:site_name" content="顾北的笔记">
-<meta property="og:description" content="最近在搞C++编程遇
-
-参考内容：
-
-http://www.lurklurk.org/linkers/linkers.html
-http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html">
+<meta property="og:description" content="刚从windows系统转到ubuntu的时候,总觉得ubuntu文件系统的文件系统很难用。在terminal和文件系统中切换感觉成本相当的高，而且ubuntu的文件系统非常难用，换了几个文件系统，都不理想。直到我发现ranger在terminal中的文件系统，相当好用，相当强大。下面我来介绍一下ranger。  
+先来看看效果：
+1. 在ubuntu下安装:1sudo apt-get instal">
+<meta property="og:image" content="/img/ranger.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C-compile-link-theory">
-<meta name="twitter:description" content="最近在搞C++编程遇
-
-参考内容：
-
-http://www.lurklurk.org/linkers/linkers.html
-http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html">
+<meta name="twitter:title" content="ranger">
+<meta name="twitter:description" content="刚从windows系统转到ubuntu的时候,总觉得ubuntu文件系统的文件系统很难用。在terminal和文件系统中切换感觉成本相当的高，而且ubuntu的文件系统非常难用，换了几个文件系统，都不理想。直到我发现ranger在terminal中的文件系统，相当好用，相当强大。下面我来介绍一下ranger。  
+先来看看效果：
+1. 在ubuntu下安装:1sudo apt-get instal">
   
     <link rel="alternative" href="/atom.xml" title="顾北的笔记" type="application/atom+xml">
   
@@ -175,11 +167,11 @@ http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html">
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-c-compile-link-theroy" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ranger" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/28/c-compile-link-theroy/" class="article-date">
-  	<time datetime="2015-04-28T04:01:43.000Z" itemprop="datePublished">2015-04-28</time>
+      <a href="/2015/05/23/ranger/" class="article-date">
+  	<time datetime="2015-05-23T14:09:33.000Z" itemprop="datePublished">2015-05-23</time>
 </a>
     </div>
   
@@ -192,7 +184,7 @@ http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html">
         
   
     <h1 class="article-title" itemprop="name">
-      C-compile-link-theory
+      ranger
     </h1>
   
 
@@ -201,12 +193,12 @@ http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html">
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C++,C</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/effective/">effective</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/software/">software</a></li></ul>
 	</div>
 
         
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/language/">language</a>
+	<a class="article-category-link" href="/categories/linux/">linux</a>
 	</div>
 
 
@@ -216,13 +208,68 @@ http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近在搞C++编程遇</p>
-<hr>
-<p>参考内容：</p>
-<ol>
-<li><a href="http://www.lurklurk.org/linkers/linkers.html" target="_blank" rel="external">http://www.lurklurk.org/linkers/linkers.html</a></li>
-<li><a href="http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html" target="_blank" rel="external">http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html</a></li>
-</ol>
+        <p>刚从windows系统转到ubuntu的时候,总觉得ubuntu文件系统的文件系统很难用。在terminal和文件系统中切换感觉成本相当的高，而且ubuntu的文件系统非常难用，换了几个文件系统，都不理想。直到我发现ranger在terminal中的文件系统，相当好用，相当强大。下面我来介绍一下ranger。  </p>
+<p>先来看看效果：<br><img src="/img/ranger.png" alt="ranger"></p>
+<h2 id="1-_在ubuntu下安装:">1. 在ubuntu下安装:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ranger caca-utils highlight atool w3m poppler-utils mediainfo</span><br></pre></td></tr></table></figure>
+<p>安装了除了ranger之外的其他软件，主要是用来预览文件用的。安装好ranger以后，运行<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ranger <span class="comment">// 进入</span></span><br><span class="line"><span class="tag">q</span> <span class="comment">// 退出</span></span><br></pre></td></tr></table></figure></p>
+<p>ii  ranger在安装目录有自己的配置文件，你可以把复制到自己的文件目录下，通过命令：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ranger --<span class="built_in">copy</span>-config=<span class="keyword">all</span></span><br></pre></td></tr></table></figure></p>
+<p>配置文件的目录位置在：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.config/ranger</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-_使用技巧">2. 使用技巧</h2><p>ranger的操作是vim-style。平时使用vim的话，会十分顺手。如果你使用terminal是xterm或者其它支持多256色的终端，则可以预览图片。因为我使用的是yakuake，研究了半天都不知道怎么才可以预览图片，这个问题先放在这里，以后有时间再解决。  </p>
+<h3 id="导航操作：">导航操作：</h3><p>正常移动</p>
+<ul>
+<li>j = Move down</li>
+<li>k = Move up</li>
+<li>h = Move to parent directory</li>
+<li>gg = Go to the top of the list</li>
+<li>G = Go to the bottom of the list</li>
+<li><ctrl>-f = Page down</ctrl></li>
+<li><ctrl>-b = Page up</ctrl></li>
+<li>J = Page down 1/2 page</li>
+<li>K = Page up 1/2 page</li>
+<li>H = Go back through navigation history</li>
+<li>L = Go forward through navigation history<br>目录快捷切换</li>
+<li>gh = cd ~</li>
+<li>ge = cd /etc</li>
+<li>gu = cd /usr</li>
+<li>gd = cd /dev</li>
+<li>go = cd /opt</li>
+<li>gv = cd /var</li>
+<li>gm = cd /media</li>
+<li>gM = cd /mnt</li>
+<li>gs = cd /srv</li>
+<li>gr = cd /</li>
+<li>gR = cd to ranger’s global configuration directory<br>我觉得这软件做的特别好的一点，当你在输入g的时候，它会跳出所有能和g配对的命令，而且还有相应的提示。提示信息非常人性化，一看就懂。<h3 id="文件操作：">文件操作：</h3>ranger的文件操作也是很方便：</li>
+<li>i = Display file (useful if you’d like to view a text file in a pager instead of editing it)</li>
+<li>l or E = Open file (opens file in default file-handler)</li>
+<li>r = Open file with… (allows you to choose program to use)</li>
+<li>o = Change sort order (follow by character in menu selection)</li>
+<li>z = Change settings (commonly used toggle settings)</li>
+<li>zh = View hidden files</li>
+<li><space> = Select current file</space></li>
+<li>t = Tag file (you can perform actions on tagged files)</li>
+<li>cw = Rename current file</li>
+<li>/ = Search for files</li>
+<li>n = Jump to next match</li>
+<li>N = Jump to previous match</li>
+<li>yy = Yank (copy) file</li>
+<li>dd = Mark file for cut operation</li>
+<li><delete> = Delete selected file<h3 id="tab切换">tab切换</h3>ranger也支持多tab：</delete></li>
+<li><ctrl>-n = Create new tab</ctrl></li>
+<li><ctrl>-w = Close current tab</ctrl></li>
+<li><tab> = Next tab</tab></li>
+<li><shift><tab> = Previous tab<h3 id="通用命令">通用命令</h3></tab></shift></li>
+<li>? = View ranger man page</li>
+<li>1? = Keybindings help</li>
+<li>2? = Command help</li>
+<li>3? = Settings help</li>
+<li>R = Reload current directory</li>
+<li>Q = Quit<h3 id="外部调用接口">外部调用接口</h3>ranger除了自己的支持，还有支持外部的shell调用</li>
+<li>! = Execute a command from the shell (non-ranger commands)</li>
+<li>: = Execute a ranger command</li>
+<li>du = Measure disk usage of current directory</li>
+<li>chmod = Change permissions of current file</li>
+</ul>
+<h2 id="结束">结束</h2><p>应该还有很多方便的功能，以后再慢慢挖掘。</p>
 
       
     </div>
@@ -232,18 +279,18 @@ http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html">
     
 <nav id="article-nav">
   
-    <a href="/2015/05/06/ubuntu-server-set-timezone/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/05/31/url-encode-tomcat/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          ubuntu-server-set-timezone
+          url-encode-tomcat
         
       </div>
     </a>
   
   
-    <a href="/2015/04/27/startup/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">new to world</div>
+    <a href="/2015/05/23/fcitx/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">fcitx</div>
       <strong class="article-nav-caption">></strong>
     </a>
   

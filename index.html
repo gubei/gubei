@@ -102,7 +102,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C-C/" style="font-size: 10px;">C++,C</a><a href="/tags/bash/" style="font-size: 10px;">bash</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/sh/" style="font-size: 10px;">sh</a><a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
+						<a href="/tags/C-C/" style="font-size: 10px;">C++,C</a><a href="/tags/bash/" style="font-size: 10px;">bash</a><a href="/tags/command/" style="font-size: 10px;">command</a><a href="/tags/effective/" style="font-size: 15px;">effective</a><a href="/tags/encoding/" style="font-size: 10px;">encoding</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/sh/" style="font-size: 10px;">sh</a><a href="/tags/software/" style="font-size: 15px;">software</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
 					</div>
 				</section>
 				
@@ -162,6 +162,323 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-url-encode-tomcat" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/31/url-encode-tomcat/" class="article-date">
+  	<time datetime="2015-05-31T08:42:51.000Z" itemprop="datePublished">2015-05-31</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/31/url-encode-tomcat/">url-encode-tomcat</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>自认为对tomcat和浏览器的编码很熟悉了，但是这周遇到了一个自动检测编码的问题。突然发现自己还是那么一知半解了。然后又费点研究一下。</p>
+<p>主要讲：</p>
+<ol>
+<li>http协议对编码的支持</li>
+<li>浏览器对编码的支持</li>
+<li>tomcat 这类web容器对编码的支持</li>
+</ol>
+<h3 id="1-_http协议">1. http协议</h3><p>自己感觉 request头主要做的事情是：<em>指示</em>，它传递的信息大多数的泛化的。比方说：告诉server，当前环境支持什么语言，什么编码方式。request中带的信息不多。而response头中信息都是具体的，具体告诉浏览器该做什么，怎么做。  </p>
+<p>request 头具体指明编码方式的字段是：</p>
+<blockquote>
+<p>Content-Type</p>
+</blockquote>
+<p>但是<code>content-type</code>只有在 Post 和 Put的时候生效，具体含义是表明当前表单是什么编码类型。  </p>
+<p>response 头中也有一个 <code>Content-Type</code>，它的含义是当前html的编码是什么。</p>
+<h3 id="2-_浏览器编码">2. 浏览器编码</h3><p>浏览器编码分为两部分：</p>
+<ul>
+<li>url编码<br>一般情况下，用户直接在浏览器中输入url编码为<code>utf-8</code>。如果点击页面上的链接，编码方式为当前页面的编码，具体的html代码为，例如：<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">meta</span> <span class="attribute">http-equiv</span>=<span class="value">"Content-Type"</span> <span class="attribute">content</span>=<span class="value">"text/html;charset=gbk"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这样点击url的编码就变成了gbk。</p>
+<ul>
+<li>html编码<br>html编码方式是根据response中返回的<code>Content-Type</code>指定。浏览器根据该值来解码当前的页面。</li>
+</ul>
+<h3 id="3-_web容器对编码的支持">3. web容器对编码的支持</h3><p>web容器是根据httpservlet request中的getRequestCoding 来去确定，当前请求的编码。RequestCoding的值只有在Post和Put的时候，浏览器会传递进来。如果是Get请求的话，将不会有值传进来。这时候用什么编码方式呢？是由web容器一个默认配置项指定的。一般情况下，我们会通过spring的一个处理编码的filter来配置。<br>如果说出现一个请求的url是gb编码，但是你的服务器设置的确是utf-8编码，这时候就会出现乱码问题。一般情况下的处理方式是：</p>
+<ul>
+<li>告诉调用我们url的网站我们的编码</li>
+<li>动态的检验当前url的编码。（等下继续说如果动态检测url编码）</li>
+</ul>
+<hr>
+<p>文档位置：</p>
+<ol>
+<li>http协议：<a href="http://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank" rel="external">http://en.wikipedia.org/wiki/List_of_HTTP_header_fields</a></li>
+<li>浏览器url编码：<a href="http://stackoverflow.com/questions/912811/what-is-the-proper-way-to-url-encode-unicode-characters" target="_blank" rel="external">http://stackoverflow.com/questions/912811/what-is-the-proper-way-to-url-encode-unicode-characters</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/encoding/">encoding</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tomcat/">tomcat</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-ranger" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/23/ranger/" class="article-date">
+  	<time datetime="2015-05-23T14:09:33.000Z" itemprop="datePublished">2015-05-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/23/ranger/">ranger</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>刚从windows系统转到ubuntu的时候,总觉得ubuntu文件系统的文件系统很难用。在terminal和文件系统中切换感觉成本相当的高，而且ubuntu的文件系统非常难用，换了几个文件系统，都不理想。直到我发现ranger在terminal中的文件系统，相当好用，相当强大。下面我来介绍一下ranger。  </p>
+<p>先来看看效果：<br><img src="/img/ranger.png" alt="ranger"></p>
+<h2 id="1-_在ubuntu下安装:">1. 在ubuntu下安装:</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ranger caca-utils highlight atool w3m poppler-utils mediainfo</span><br></pre></td></tr></table></figure>
+<p>安装了除了ranger之外的其他软件，主要是用来预览文件用的。安装好ranger以后，运行<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ranger <span class="comment">// 进入</span></span><br><span class="line"><span class="tag">q</span> <span class="comment">// 退出</span></span><br></pre></td></tr></table></figure></p>
+<p>ii  ranger在安装目录有自己的配置文件，你可以把复制到自己的文件目录下，通过命令：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ranger --<span class="built_in">copy</span>-config=<span class="keyword">all</span></span><br></pre></td></tr></table></figure></p>
+<p>配置文件的目录位置在：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/.config/ranger</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-_使用技巧">2. 使用技巧</h2><p>ranger的操作是vim-style。平时使用vim的话，会十分顺手。如果你使用terminal是xterm或者其它支持多256色的终端，则可以预览图片。因为我使用的是yakuake，研究了半天都不知道怎么才可以预览图片，这个问题先放在这里，以后有时间再解决。  </p>
+<h3 id="导航操作：">导航操作：</h3><p>正常移动</p>
+<ul>
+<li>j = Move down</li>
+<li>k = Move up</li>
+<li>h = Move to parent directory</li>
+<li>gg = Go to the top of the list</li>
+<li>G = Go to the bottom of the list</li>
+<li><ctrl>-f = Page down</ctrl></li>
+<li><ctrl>-b = Page up</ctrl></li>
+<li>J = Page down 1/2 page</li>
+<li>K = Page up 1/2 page</li>
+<li>H = Go back through navigation history</li>
+<li>L = Go forward through navigation history<br>目录快捷切换</li>
+<li>gh = cd ~</li>
+<li>ge = cd /etc</li>
+<li>gu = cd /usr</li>
+<li>gd = cd /dev</li>
+<li>go = cd /opt</li>
+<li>gv = cd /var</li>
+<li>gm = cd /media</li>
+<li>gM = cd /mnt</li>
+<li>gs = cd /srv</li>
+<li>gr = cd /</li>
+<li>gR = cd to ranger’s global configuration directory<br>我觉得这软件做的特别好的一点，当你在输入g的时候，它会跳出所有能和g配对的命令，而且还有相应的提示。提示信息非常人性化，一看就懂。<h3 id="文件操作：">文件操作：</h3>ranger的文件操作也是很方便：</li>
+<li>i = Display file (useful if you’d like to view a text file in a pager instead of editing it)</li>
+<li>l or E = Open file (opens file in default file-handler)</li>
+<li>r = Open file with… (allows you to choose program to use)</li>
+<li>o = Change sort order (follow by character in menu selection)</li>
+<li>z = Change settings (commonly used toggle settings)</li>
+<li>zh = View hidden files</li>
+<li><space> = Select current file</space></li>
+<li>t = Tag file (you can perform actions on tagged files)</li>
+<li>cw = Rename current file</li>
+<li>/ = Search for files</li>
+<li>n = Jump to next match</li>
+<li>N = Jump to previous match</li>
+<li>yy = Yank (copy) file</li>
+<li>dd = Mark file for cut operation</li>
+<li><delete> = Delete selected file<h3 id="tab切换">tab切换</h3>ranger也支持多tab：</delete></li>
+<li><ctrl>-n = Create new tab</ctrl></li>
+<li><ctrl>-w = Close current tab</ctrl></li>
+<li><tab> = Next tab</tab></li>
+<li><shift><tab> = Previous tab<h3 id="通用命令">通用命令</h3></tab></shift></li>
+<li>? = View ranger man page</li>
+<li>1? = Keybindings help</li>
+<li>2? = Command help</li>
+<li>3? = Settings help</li>
+<li>R = Reload current directory</li>
+<li>Q = Quit<h3 id="外部调用接口">外部调用接口</h3>ranger除了自己的支持，还有支持外部的shell调用</li>
+<li>! = Execute a command from the shell (non-ranger commands)</li>
+<li>: = Execute a ranger command</li>
+<li>du = Measure disk usage of current directory</li>
+<li>chmod = Change permissions of current file</li>
+</ul>
+<h2 id="结束">结束</h2><p>应该还有很多方便的功能，以后再慢慢挖掘。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/effective/">effective</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/software/">software</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-fcitx" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/23/fcitx/" class="article-date">
+  	<time datetime="2015-05-23T09:46:27.000Z" itemprop="datePublished">2015-05-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/23/fcitx/">fcitx</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-linux-handy-software" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/05/23/linux-handy-software/" class="article-date">
+  	<time datetime="2015-05-23T04:05:35.000Z" itemprop="datePublished">2015-05-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/23/linux-handy-software/">linux-handy-software</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用了这么长时间的用ubuntu。发现了很多高效的工具。我都把逐一的记下来：</p>
+<ol>
+<li><a href="ranger.md">ranger 文件浏览器</a></li>
+<li>zsh + oh-my-zsh</li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/effective/">effective</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/software/">software</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-linux-shortcut" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -201,17 +518,21 @@
 <li>Shift + Insert – 向终端内粘贴文本</li>
 </ol>
 <h3 id="sudo_!!">sudo !!</h3><p>sudo repeat last command</p>
-<h3 id="ranger_文件浏览器">ranger 文件浏览器</h3><h3 id="htop_进程查看">htop 进程查看</h3>
+<h3 id="htop_进程查看">htop 进程查看</h3>
       
     </div>
     
     <div class="article-info article-info-index">
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/linux/">linux</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -426,6 +747,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近在搞C++编程遇</p>
+<hr>
+<p>参考内容：</p>
+<ol>
+<li><a href="http://www.lurklurk.org/linkers/linkers.html" target="_blank" rel="external">http://www.lurklurk.org/linkers/linkers.html</a></li>
+<li><a href="http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html" target="_blank" rel="external">http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html</a></li>
+</ol>
 
       
     </div>
@@ -438,7 +765,7 @@
 
       
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/computer/">computer</a>
+	<a class="article-category-link" href="/categories/language/">language</a>
 	</div>
 
 
@@ -456,10 +783,10 @@
 
 
   
-    <article id="post-hello" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-startup" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/04/27/hello/" class="article-date">
+      <a href="/2015/04/27/startup/" class="article-date">
   	<time datetime="2015-04-27T11:47:44.000Z" itemprop="datePublished">2015-04-27</time>
 </a>
     </div>
@@ -473,7 +800,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/27/hello/">new to world</a>
+      <a class="article-title" href="/2015/04/27/startup/">new to world</a>
     </h1>
   
 
@@ -483,6 +810,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>自从发现了markdown写文章这种方式，现在已经爱上了这种方式。没事儿干自己就码点文章。这样既作为自己平时学习的积累，以便自己未来某个时间自己回顾一下。</p>
+<p>以前看了很多东西，不为自己写下来。时间久了，不怎么用也会慢慢一点点的遗忘。每次要用的时候，需要去回忆，会花费很长的时间。所以越发的觉得把学到的、想到的写下来是非常非常重要的。慢慢写，每周都有所积累。</p>
 
       
     </div>
