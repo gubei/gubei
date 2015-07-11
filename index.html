@@ -102,7 +102,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C-C/" style="font-size: 10px;">C++,C</a><a href="/tags/bash/" style="font-size: 10px;">bash</a><a href="/tags/command/" style="font-size: 10px;">command</a><a href="/tags/effective/" style="font-size: 15px;">effective</a><a href="/tags/encoding/" style="font-size: 10px;">encoding</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/sh/" style="font-size: 10px;">sh</a><a href="/tags/software/" style="font-size: 15px;">software</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
+						<a href="/tags/C-C/" style="font-size: 10px;">C++,C</a><a href="/tags/bash/" style="font-size: 10px;">bash</a><a href="/tags/command/" style="font-size: 10px;">command</a><a href="/tags/effective/" style="font-size: 15px;">effective</a><a href="/tags/encoding/" style="font-size: 10px;">encoding</a><a href="/tags/html/" style="font-size: 10px;">html</a><a href="/tags/linux/" style="font-size: 20px;">linux</a><a href="/tags/sh/" style="font-size: 10px;">sh</a><a href="/tags/software/" style="font-size: 15px;">software</a><a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a><a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a>
 					</div>
 				</section>
 				
@@ -162,6 +162,252 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-drawing-begin" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/11/drawing-begin/" class="article-date">
+  	<time datetime="2015-07-11T14:04:10.000Z" itemprop="datePublished">2015-07-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/11/drawing-begin/">drawing/begin</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>艺术是一种释放与表达，好的老师帮你开阔思路，差的老师只会给你各种约束。所以不管怎样，动手就是进步。</li>
+</ul>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://www.zhihu.com/question/19620220" target="_blank" rel="external">http://www.zhihu.com/question/19620220</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/art/">art</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-java-bits" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/11/java-bits/" class="article-date">
+  	<time datetime="2015-07-11T14:02:35.000Z" itemprop="datePublished">2015-07-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/11/java-bits/">java-bits</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="java符号位">java符号位</h4><pre><code>java所有的数值基础类型<span class="keyword">int</span>,<span class="keyword">double</span>,<span class="keyword">float</span>,<span class="keyword">byte</span>都是有符号位的。
+</code></pre><h4 id="java位展示">java位展示</h4><pre><code><span class="built_in">int</span> i = xcafe ; // hexadecimal <span class="keyword">case</span>
+<span class="built_in">int</span> j = <span class="number">045</span> ;    // octal <span class="keyword">case</span>
+<span class="built_in">int</span> l = <span class="number">42</span> ;     // <span class="keyword">decimal</span> <span class="keyword">case</span>
+<span class="built_in">int</span> z = b1100110011 // binary <span class="keyword">case</span>
+</code></pre><h4 id="java数值类型的位数">java数值类型的位数</h4><pre><code><span class="keyword">int</span> <span class="number">32</span>位
+<span class="keyword">byte</span> <span class="number">8</span>位
+<span class="keyword">double</span> <span class="number">64</span>位
+<span class="keyword">float</span> <span class="number">32</span>位
+</code></pre><h4 id="java基础位操作">java基础位操作</h4><pre><code><span class="number">1</span>. <span class="escape">`|</span><span class="escape">` </span><span class="literal">or</span> 操作
+<span class="number">2</span>. <span class="escape">`&amp;</span><span class="escape">` </span><span class="literal">and</span> 操作
+<span class="number">3</span>. <span class="escape">`^</span><span class="escape">` </span>Xor 操作
+<span class="number">4</span>. <span class="escape">`~</span><span class="escape">` </span><span class="literal">Not</span> 操作
+<span class="number">5</span>. <span class="escape">`&lt;</span>&lt;<span class="escape">` </span>左移位，右边补零
+<span class="number">6</span>. <span class="escape">`&gt;</span>&gt;&gt;<span class="escape">` </span>逻辑移位，右边补零
+<span class="number">7</span>. <span class="escape">`&gt;</span>&gt;<span class="escape">` </span>算法移位，右边补符号位
+</code></pre><hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="http://stackoverflow.com/questions/842817/how-does-java-convert-int-into-byte" target="_blank" rel="external">http://stackoverflow.com/questions/842817/how-does-java-convert-int-into-byte</a></li>
+<li><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html" target="_blank" rel="external">https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op3.html</a></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/java/">java</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-vim-encode" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/07/11/vim-encode/" class="article-date">
+  	<time datetime="2015-07-11T13:32:39.000Z" itemprop="datePublished">2015-07-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/11/vim-encode/">vim-encode</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网上已经有很多关于vim的编码设置，但是我觉得这个设置很重要：</p>
+<p>如果已经打开了解码错的文件，想重新设置编码格式：<br><figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:<span class="keyword">edit</span> ++<span class="keyword">enc</span>=utf8</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/vim/">vim</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
+    <article id="post-DOCTYPE-html-error" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/06/10/DOCTYPE-html-error/" class="article-date">
+  	<time datetime="2015-06-10T03:30:13.000Z" itemprop="datePublished">2015-06-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/10/DOCTYPE-html-error/">DOCTYPE-html-error</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天遇到了一个错误：<br><img src="/img/doctype.png" alt="error"></p>
+<p>这个错误出现的原因是：<br>有一个异步请求返回的数据不是标准的json或者jsonp数据，就会报这个错误</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/http/">http</a>
+	</div>
+
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+  
     <article id="post-url-encode-tomcat" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -200,7 +446,7 @@
 <blockquote>
 <p>Content-Type</p>
 </blockquote>
-<p>但是<code>content-type</code>只有在 Post 和 Put的时候生效，具体含义是表明当前表单是什么编码类型。  </p>
+<p>但是<code>content-type</code>只有在 Post 和 Put 的时候生效，具体含义是表明当前表单是什么编码类型。  </p>
 <p>response 头中也有一个 <code>Content-Type</code>，它的含义是当前html的编码是什么。</p>
 <h3 id="2-_浏览器编码">2. 浏览器编码</h3><p>浏览器编码分为两部分：</p>
 <ul>
@@ -233,6 +479,10 @@
 	</div>
 
       
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/http/">http</a>
+	</div>
+
 
       
       <div class="clearfix"></div>
@@ -392,7 +642,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>待写</p>
+
       
     </div>
     
@@ -574,7 +825,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <hr>
+        <h2 id="前言">前言</h2><p>研究javascript的设计模式能对设计模式有深入的理解。这块内容一定要好好写。</p>
+<hr>
 <p>参考书籍：</p>
 <ol>
 <li><a href="http://addyosmani.com/resources/essentialjsdesignpatterns/book/" target="_blank" rel="external">learn javascript design pattern</a></li>
@@ -586,191 +838,8 @@
     <div class="article-info article-info-index">
       
       
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-difference-between-sh-and-bash" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/05/07/difference-between-sh-and-bash/" class="article-date">
-  	<time datetime="2015-05-07T07:24:36.000Z" itemprop="datePublished">2015-05-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/07/difference-between-sh-and-bash/">difference-between-sh-and-bash</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天遇到了一个问题，再使用<code>let</code>的时候<br><code>/bin/sh</code> 提示没有关键字</p>
-<p>以前一直以为<code>/bin/sh</code>和<code>/bin/bash</code>是一样。<br>遇到了这个问题，我查了一下：</p>
-<blockquote>
-<p>bash and sh are two different shells. Basically bash is sh, with more features and better syntax. Most commands work the same, but they are different.<br> I would use bash, as that is pretty much the standard (or at least most common, from my experience). In fact, problems arise when a bash script will use #!/bin/sh because the script-maker assumes the link is to bash</p>
-</blockquote>
-<p>在使用<code>/bin/sh</code> 或者<code>/bin/bash</code>的时候要注意兼容性 </p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sh/">sh</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-ubuntu-server-set-timezone" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/05/06/ubuntu-server-set-timezone/" class="article-date">
-  	<time datetime="2015-05-06T05:19:40.000Z" itemprop="datePublished">2015-05-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/06/ubuntu-server-set-timezone/">ubuntu-server-set-timezone</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在使用ubuntu的服务器，我发现如果不是设置时区打印出log的时候是按照UTC时区来的。我就不能直观知道请求时间，所以就需要设置一下时区。</p>
-<p>先查看当前的时间：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">date</span><br></pre></td></tr></table></figure></p>
-<p>显示当前的时间，例如：</p>
-<blockquote>
-<p>Wed May  6 13:24:59 CST 2015</p>
-</blockquote>
-<p>再看出当前的时区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more /etc/timezone</span><br></pre></td></tr></table></figure></p>
-<p>显示时区为：</p>
-<blockquote>
-<p>Asia/Shanghai</p>
-</blockquote>
-<p>接下来调整到你需要的时区，使用命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure></p>
-<p>选择时区，完成操作。</p>
-<p>同样如果你有cron的任务的话，需要重启cron，不然它还是会使用老的时区时间<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/cron stop</span><br><span class="line">/etc/init.d/cron start</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
-    <article id="post-c-compile-link-theroy" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/04/28/c-compile-link-theroy/" class="article-date">
-  	<time datetime="2015-04-28T04:01:43.000Z" itemprop="datePublished">2015-04-28</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/28/c-compile-link-theroy/">C-compile-link-theory</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近在搞C++编程遇</p>
-<hr>
-<p>参考内容：</p>
-<ol>
-<li><a href="http://www.lurklurk.org/linkers/linkers.html" target="_blank" rel="external">http://www.lurklurk.org/linkers/linkers.html</a></li>
-<li><a href="http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html" target="_blank" rel="external">http://www.yolinux.com/TUTORIALS/LibraryArchives-StaticAndDynamic.html</a></li>
-</ol>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C-C/">C++,C</a></li></ul>
-	</div>
-
-      
 	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/language/">language</a>
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
 	</div>
 
 
@@ -788,56 +857,10 @@
 
 
   
-    <article id="post-startup" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2015/04/27/startup/" class="article-date">
-  	<time datetime="2015-04-27T11:47:44.000Z" itemprop="datePublished">2015-04-27</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/27/startup/">new to world</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>自从发现了markdown写文章这种方式，现在已经爱上了这种方式。没事儿干自己就码点文章。这样既作为自己平时学习的积累，以便自己未来某个时间自己回顾一下。</p>
-<p>以前看了很多东西，不为自己写下来。时间久了，不怎么用也会慢慢一点点的遗忘。每次要用的时候，需要去回忆，会花费很长的时间。所以越发的觉得把学到的、想到的写下来是非常非常重要的。慢慢写，每周都有所积累。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
